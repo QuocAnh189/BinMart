@@ -10,6 +10,8 @@ class WithdrawRequest extends Model
 {
     use HasFactory;
 
+    public static array $status = ['pending', 'paid', 'decline'];
+
     public function vendor(): belongsTo
     {
         return $this->belongsTo(Vendor::class);

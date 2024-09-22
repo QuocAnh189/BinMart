@@ -6,20 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('razorpay_settings', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->boolean('status');
+            $table->string('country_name');
+            $table->string('currency_name');
+            $table->double('currency_rate');
+            $table->text('razorpay_key');
+            $table->text('razorpay_secret_key');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('razorpay_settings');

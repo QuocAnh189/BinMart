@@ -6,20 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('order_products', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->uuid('order_id');
+            $table->uuid('product_id');
+            $table->uuid('vendor_id');
+            $table->string('product_name');
+            $table->text('variants');
+            $table->integer('variant_total')->nullable();
+            $table->string('unit_price');
+            $table->integer('qty');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('order_products');
