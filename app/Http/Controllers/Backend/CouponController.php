@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Admin\CouponDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class CouponController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() {}
+    public function index(CouponDataTable $dataTable) {}
 
     /**
      * Show the form for creating a new resource.

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Admin\WithdrawMethodDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class WithdrawMethodController extends Controller
 {
-    public function index() {}
+    public function index(WithdrawMethodDataTable $dataTable) {}
 
     public function create() {}
 

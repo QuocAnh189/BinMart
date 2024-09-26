@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Admin\BlogDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index() {}
+    public function index(BlogDataTable $dataTable) {}
 
     public function create() {}
 

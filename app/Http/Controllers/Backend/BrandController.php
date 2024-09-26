@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Admin\BrandDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function index() {}
+    public function index(BrandDataTable $dataTable) {}
 
     /**
      * Show the form for creating a new resource.

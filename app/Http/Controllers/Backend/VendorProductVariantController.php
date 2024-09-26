@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Vendor\VendorProductVariantDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class VendorProductVariantController extends Controller
 {
-    public function index(Request $request) {}
+    public function index(Request $request, VendorProductVariantDataTable $dataTable) {}
 
     public function create() {}
 
