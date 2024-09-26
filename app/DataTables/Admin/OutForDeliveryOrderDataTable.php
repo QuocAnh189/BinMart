@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables\Admin;
+namespace App\DataTables;
 
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
@@ -92,6 +92,7 @@ class OutForDeliveryOrderDataTable extends DataTable
             ->setTableId('pendingorder-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
+                    //->dom('Bfrtip')
             ->orderBy(0)
             ->selectStyleSingle()
             ->buttons([
@@ -111,14 +112,16 @@ class OutForDeliveryOrderDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('invoice_id'),
+            Column::make('invocie_id'),
             Column::make('customer'),
             Column::make('date'),
             Column::make('product_qty'),
             Column::make('amount'),
             Column::make('order_status'),
             Column::make('payment_status'),
+
             Column::make('payment_method'),
+
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

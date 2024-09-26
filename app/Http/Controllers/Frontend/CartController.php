@@ -7,34 +7,34 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function cartDetails() {}
+    public function cart_details() {}
 
     /** Add item to cart */
-    public function addToCart(Request $request) {}
+    public function add_to_cart(Request $request) {}
 
     /** Update product quantity */
-    public function updateProductQty(Request $request) {}
+    public function update_product_qty(Request $request) {}
 
     /** get product total */
-    public function getProductTotal($rowId) {}
+    public function get_product_total($rowId) {}
 
     /** get cart total amount */
-    public function cartTotal() {}
+    public function cart_total() {}
 
     /** clear all cart products */
-    public function clearCart() {}
+    public function clear_cart() {}
 
     /** Remove product form cart */
-    public function removeProduct($rowId) {}
+    public function remove_product($rowId) {}
 
     /** Get cart count */
-    public function getCartCount() {}
+    public function get_cart_count() {}
 
     /** Get all cart products */
-    public function getCartProducts() {}
+    public function get_cart_products() {}
 
     /** Remove product form sidebar cart */
-    public function removeSidebarProduct(Request $request) {}
+    public function remove_sidebar_product(Request $request) {}
 
     /** Apply coupon */
     public function applyCoupon(Request $request) {}

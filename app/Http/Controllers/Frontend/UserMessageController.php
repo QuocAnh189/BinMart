@@ -9,7 +9,7 @@ class UserMessageController extends Controller
 {
     public function index() {}
 
-    public function sendMessage(Request $request) {}
+    public function send_message(Request $request) {}
 
-    public function getMessages(Request $request) {}
+    public function get_message(Request $request) {}
 }

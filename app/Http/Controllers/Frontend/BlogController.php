@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     public function blog() {}
 
-    public function blogDetails(string $slug) {}
+    public function blog_details(string $slug) {}
 
     public function comment(Request $request) {}
 }

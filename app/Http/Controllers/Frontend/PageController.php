@@ -9,12 +9,12 @@ class PageController extends Controller
 {
     public function about() {}
 
-    public function termsAndCondition() {}
+    public function terms_and_condition() {}
 
     public function contact()
     {
         return view('frontend.pages.contact');
     }
 
-    public function handleContactForm(Request $request) {}
+    public function handle_contact_form(Request $request) {}
 }

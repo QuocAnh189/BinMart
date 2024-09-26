@@ -51,9 +51,9 @@ function productType($type): string
 function getCartTotal(): float
 {
     $total = 0;
-    // foreach (\Cart::content() as $product) {
-    //     $total += ($product->price + $product->options->variants_total) * $product->qty;
-    // }
+    foreach (\Cart::content() as $product) {
+        $total += ($product->price + $product->options->variants_total) * $product->qty;
+    }
 
     return $total;
 }
@@ -111,7 +111,7 @@ function getFinalPayableAmount()
 /** lemit text */
 function limitText($text, $limit = 20)
 {
-    //    return \Str::limit($text, $limit);
+    return \Str::limit($text, $limit);
 }
 
 function getCurrencyIcon()

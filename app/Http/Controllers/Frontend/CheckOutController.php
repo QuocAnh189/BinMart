@@ -9,7 +9,7 @@ class CheckOutController extends Controller
 {
     public function index() {}
 
-    public function createAddress(Request $request) {}
+    public function create_address(Request $request) {}
 
-    public function checkOutFormSubmit(Request $request) {}
+    public function checkout_form_submit(Request $request) {}
 }

@@ -9,7 +9,7 @@ class WishlistController extends Controller
 {
     public function index() {}
 
-    public function addToWishlist(Request $request) {}
+    public function add_to_wishlist(Request $request) {}
 
     public function destroy(string $id) {}
 }

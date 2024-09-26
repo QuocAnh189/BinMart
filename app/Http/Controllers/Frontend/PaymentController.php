@@ -9,26 +9,26 @@ class PaymentController extends Controller
 {
     public function index() {}
 
-    public function paymentSuccess() {}
+    public function payment_success() {}
 
-    public function payWithPaypal() {}
+    public function pay_with_paypal() {}
 
     public function paypalConfig() {}
 
-    public function paypalSuccess(Request $request) {}
+    public function paypal_success(Request $request) {}
 
     public function storeOrder($paymentMethod, $paymentStatus, $transactionId, $paidAmount, $paidCurrencyName) {}
 
     public function clearSession() {}
 
-    public function paypalCancel() {}
+    public function paypal_cancel() {}
 
     /** Stripe Payment */
-    public function payWithStripe(Request $request) {}
+    public function pay_with_stripe(Request $request) {}
 
     /** Razorpay payment */
-    public function payWithRazorPay(Request $request) {}
+    public function pay_with_razorpay(Request $request) {}
 
     /** pay with cod */
-    public function payWithCod(Request $request) {}
+    public function pay_with_code(Request $request) {}
 }
