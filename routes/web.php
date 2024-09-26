@@ -35,9 +35,9 @@ require __DIR__.'/auth.php';
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
 
 /** Product routes */
-Route::get('products', [FrontendProductController::class, 'productsIndex'])->name('products');
-Route::get('product-detail/{slug}', [FrontendProductController::class, 'showProduct'])->name('product-detail');
-Route::get('change-product-list-view', [FrontendProductController::class, 'changeListView'])->name('change-product-list-view');
+Route::get('products', [FrontendProductController::class, 'index'])->name('products.index');
+Route::get('product-detail/{slug}', [FrontendProductController::class, 'show_product'])->name('product-detail');
+Route::get('change-product-list-view', [FrontendProductController::class, 'change_list_view'])->name('change-product-list-view');
 
 /** Newsletter routes */
 Route::post('newsletter-request', [NewsletterController::class, 'newsLetterRequest'])->name('newsletter-request');

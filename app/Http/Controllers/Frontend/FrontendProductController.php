@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class FrontendProductController extends Controller
 {
-    public function productsIndex(Request $request) {}
+    public function index(Request $request) {}
 
     /** Show product detail page */
-    public function showProduct(string $slug) {}
+    public function show_product(string $slug) {}
 
-    public function changeListView(Request $request) {}
+    public function change_list_view(Request $request) {}
 }

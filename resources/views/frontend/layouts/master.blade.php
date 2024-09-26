@@ -32,9 +32,9 @@
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
-    {{--    @if($settings->layout === 'RTL')--}}
-    {{--        <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">--}}
-    {{--    @endif--}}
+    @if($settings->layout === 'RTL')
+        <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">
+    @endif
     @vite(['resources/js/app.js'])
 </head>
 
@@ -83,7 +83,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{asset('frontend/js/jquery.classycountdown.js')}}"></script>
 
-
 <script src="{{asset('frontend/js/main.js')}}"></script>
 
 <script>
@@ -98,7 +97,7 @@
         $('.auto_click').click();
     });
 </script>
-{{--@include('frontend.layouts.scripts')--}}
+@include('frontend.layouts.scripts')
 @stack('scripts')
 </body>
 

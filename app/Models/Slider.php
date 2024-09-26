@@ -33,6 +33,7 @@ use Illuminate\Support\Str;
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider where($value)
  */
 class Slider extends Model
 {
