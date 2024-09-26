@@ -10,8 +10,9 @@ class EmailConfiguration extends Model
 {
     use HasFactory;
 
-    protected $keyType = 'string';
     public $incrementing = false;
+
+    protected $keyType = 'string';
 
     protected $fillable = [
         'email',
@@ -22,7 +23,7 @@ class EmailConfiguration extends Model
         'encryption',
     ];
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 
