@@ -1,0 +1,16 @@
+@extends('frontend.dashboard.layouts.master')
+
+@section('title')
+    {{--    {{ $settings->site_name }} || Order--}}
+    Order
+@endsection
+
+@section('content')
+    <section id="wsus__dashboard">
+        <div class="container-fluid">
+            @include('vendor.layouts.sidebar')
+
+        </div>
+    </section>
+@endsection
+

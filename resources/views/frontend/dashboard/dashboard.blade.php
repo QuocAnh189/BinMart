@@ -1,17 +1,15 @@
 @extends('frontend.layouts.master')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>This is user</h1>
-            </div>
-        </div>
-    </div>
+@section('title')
+    {{--    {{$settings->site_name}} || Dashboard--}}
+    Dashboard
+@endsection
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
+@section('content')
+    <section id="wsus__dashboard">
+        <div class="container-fluid">
+            @include('frontend.dashboard.layouts.sidebar')
+        </div>
+    </section>
 @endsection
 
