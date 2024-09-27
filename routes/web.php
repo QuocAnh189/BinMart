@@ -47,7 +47,7 @@ Route::get('change-product-list-view', [FrontendProductController::class, 'chang
 Route::post('newsletter-request', [NewsletterController::class, 'newsLetterRequest'])->name('newsletter-request');
 Route::get('newsletter-verify/{token}', [NewsletterController::class, 'newsLetterEmailVerify'])->name('newsletter-verify');
 
-/** About page route */
+/** About route */
 Route::get('about', [PageController::class, 'about'])->name('about');
 
 /** Terms and conditions page route */

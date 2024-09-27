@@ -1,8 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    {{--    {{$settings->site_name}} || About--}}
-    About
+    {{$settings->site_name}} || BinMart
 @endsection
 
 @section('content')
@@ -14,15 +13,25 @@
                         <h4>About</h4>
                         <ul>
                             <li><a href="{{route('home')}}">home</a></li>
-                            <li><a href="javascript:;">About</a></li>
+                            <li><a href="javascript:">About</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="wsus__cart_view">
+        <div class="container">
+            <div class="wsus__pay_info_area">
+                <div class="row">
+                    <div class="card">
+                        <div class="cart-body p-5">
+                            {!!@$about->content!!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
-
-@push('scripts')
-
-@endpush
