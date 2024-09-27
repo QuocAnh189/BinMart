@@ -18,23 +18,21 @@
                         <i class="far fa-bars"></i>
                     </div>
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
-                        {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}}
-
                         @foreach ($categories as $category)
                             <li><a class="{{count($category->subCategories) > 0 ? 'wsus__drop_arrow' : ''}}"
-                                   href="{{route('products.index', ['category' => $category->slug])}}"><i
+                                   href="{{route('products', ['category' => $category->slug])}}"><i
                                         class="{{$category->icon}}"></i> {{$category->name}} </a>
                                 @if(count($category->subCategories) > 0)
                                     <ul class="wsus_menu_cat_dropdown">
                                         @foreach ($category->subCategories as $subCategory)
                                             <li>
-                                                <a href="{{route('products.index', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}}
-                                                    <i class="{{count($subCategory->childCategories) > 0 ? 'fas fa-angle-right' : ''}}"></i></a>
+                                                <a href="{{route('products', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}}
+                                                    <i class="{{ count($subCategory->childCategories) > 0 ? 'fas fa-angle-right' : '' }}"></i></a>
                                                 @if(count($subCategory->childCategories) > 0)
                                                     <ul class="wsus__sub_category">
                                                         @foreach ($subCategory->childCategories as $childCategory)
                                                             <li>
-                                                                <a href="{{route('products.index', ['childcategory' => $childCategory->slug])}}">{{$childCategory->name}}</a>
+                                                                <a href="{{route('products', ['childcategory' => $childCategory->slug])}}">{{$childCategory->name}}</a>
                                                             </li>
                                                         @endforeach
                                                     </ul>
@@ -49,7 +47,7 @@
 
                     <ul class="wsus__menu_item">
                         <li><a class="{{setActive(['home'])}}" href="{{url('/')}}">home</a></li>
-                        <li><a class="{{setActive(['vendor.index'])}}" href="{{ route('vendor.index') }}">vendors</a>
+                        <li><a class="{{setActive(['vendor'])}}" href="{{ route('vendor') }}">vendors</a>
                         </li>
                         <li><a class="{{setActive(['flash-sale'])}}" href="{{ route('flash-sale') }}">flash Sale</a>
                         </li>
@@ -60,7 +58,7 @@
 
                     <ul class="wsus__menu_item wsus__menu_item_right">
                         <li><a href="{{ route('product-tracking.index') }}">track order</a></li>
-                        @if (auth()->check())
+                        @if ( auth()->check() )
                             @if (auth()->user()->role === 'user')
                                 <li><a href="{{ route('user.dashboard') }}">my account</a></li>
                             @elseif (auth()->user()->role === 'vendor')
@@ -103,12 +101,11 @@
                 <li><a href="{{route('admin.dashboard')}}"><i class="fal fa-user"></i></a></li>
             @endif
         @else
-            <li><a href="{{route('login')}}"><i class="fal fa-user"></i></a></li>
+            <li><a href="{{ route('login') }}"><i class="fal fa-user"></i></a></li>
         @endif
 
-
     </ul>
-    <form action="{{route('products.index')}}">
+    <form action="{{route('products')}}">
         <input type="text" placeholder="Search..." name="search" value="{{request()->search}}">
         <button type="submit"><i class="far fa-search"></i></button>
     </form>
@@ -163,7 +160,7 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
                     <ul>
                         <li><a href="{{ route('home') }}">home</a></li>
-                        <li><a href="{{ route('vendor.index') }}">vendor</a></li>
+                        <li><a href="{{ route('vendor') }}">vendor</a></li>
                         <li><a href="{{ route('blog') }}">blog</a></li>
                         <li><a href="{{ route('about') }}">about us</a></li>
                         <li><a href="{{ route('contact') }}">contact</a></li>

@@ -32,7 +32,7 @@ class HomeController extends Controller
         $categoryProductSliderSectionThree = HomePageSetting::where('key', 'product_slider_section_three')->first();
 
         $homepage_section_banner_one = Advertisement::where('key', 'homepage_section_banner_one')->first();
-        $homepage_section_banner_one = json_decode($homepage_section_banner_one->value);
+        $homepage_section_banner_one = json_decode($homepage_section_banner_one?->value);
 
         $homepage_section_banner_two = Advertisement::where('key', 'homepage_section_banner_two')->first();
         $homepage_section_banner_two = json_decode($homepage_section_banner_two?->value);

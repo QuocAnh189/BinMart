@@ -37,9 +37,9 @@
 }
 
 .wsus__category_search
-    .select2-container--default
-    .select2-selection--single
-    .select2-selection__rendered {
+.select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
     line-height: 0;
 }
 
@@ -63,8 +63,8 @@
 }
 
 .select2-container--default
-    .select2-selection--single
-    .select2-selection__arrow {
+.select2-selection--single
+.select2-selection__arrow {
     right: auto;
     left: 30px;
 }
@@ -84,7 +84,7 @@
     top: 5px;
 }
 
-.wsus_menu_cat_item li .wsus__droap_arrow::after {
+.wsus_menu_cat_item li .wsus__drop_arrow::after {
     right: auto;
     left: 30px;
     transform: rotateY(180deg);
@@ -94,17 +94,17 @@
     -o-transform: rotateY(180deg);
 }
 
-.wsus_menu_cat_droapdown {
+.wsus_menu_cat_dropdown {
     left: auto;
     right: 105%;
 }
 
-.wsus_menu_cat_item li:hover .wsus_menu_cat_droapdown {
+.wsus_menu_cat_item li:hover .wsus_menu_cat_dropdown {
     left: auto;
     right: 100%;
 }
 
-.wsus_menu_cat_droapdown li a i {
+.wsus_menu_cat_dropdown li a i {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -117,7 +117,7 @@
     right: 105%;
 }
 
-.wsus_menu_cat_droapdown li:hover .wsus__sub_category {
+.wsus_menu_cat_dropdown li:hover .wsus__sub_category {
     left: auto;
     right: 100%;
 }
@@ -131,7 +131,7 @@
     right: 20px;
 }
 
-.wsus__flash_coundown .common_btn i {
+.wsus__flash_countdown .common_btn i {
     margin-left: 0;
     margin-right: 5px;
     transform: rotateY(180deg);
@@ -247,7 +247,7 @@
     left: 42px !important;
 }
 
-.wsus__menu_droapdown {
+.wsus__menu_dropdown {
     left: auto;
     right: 0;
 }
@@ -370,6 +370,7 @@
 .wsis__mega_menu_item li a:hover {
     color: #007aff !important;
 }
+
 /* HOME PAGE END */
 
 /* ABOUT PAGE START */
@@ -377,6 +378,7 @@
     left: 15px;
     position: absolute;
 }
+
 /* ABOUT PAGE END */
 
 /* BLOG DETAILS START */
@@ -485,6 +487,7 @@
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
 }
+
 /* BLOG DETAILS END */
 
 /* BRAND START */
@@ -501,6 +504,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 5px;
 }
+
 /* BRAND END */
 
 /* EMPTY CART START */
@@ -514,6 +518,7 @@
     left: 15px;
     top: 15px;
 }
+
 /* EMPTY CART END */
 
 /* CART VIEW START */
@@ -531,6 +536,7 @@
     margin-left: 0;
     margin-right: 15px;
 }
+
 /* CART VIEW END */
 
 /* CHECK OUT START */
@@ -551,12 +557,14 @@
     right: auto;
     left: -8px;
 }
+
 /* CHECK OUT END */
 
 /* COMPARE START */
 .wsus__compare_des p {
     text-align: right;
 }
+
 /* COMPARE END */
 
 /* DAILY DEALD DETAILS START */
@@ -569,6 +577,7 @@
     left: auto;
     right: 20px;
 }
+
 /* DAILY DEALD DETAILS END */
 
 .wsus__compare_text i {
@@ -637,6 +646,7 @@
     left: auto;
     right: 0;
 }
+
 /* PAYMENT END */
 
 /* PRODUCT DETAILS START */
@@ -747,6 +757,7 @@
     margin-right: 0;
     margin-left: 10px;
 }
+
 /* PRODUCT DETAILS END */
 
 /* PRODUCT START */
@@ -788,6 +799,7 @@
     margin-right: 0;
     margin-left: 10px;
 }
+
 /* PRODUCT END */
 
 /* ORDER TRACK START */
@@ -811,6 +823,7 @@
 .wsus__track_area .common_btn i {
     transform: rotateY(180deg);
 }
+
 /* ORDER TRACK END */
 
 /* VENDORE START */
@@ -818,6 +831,7 @@
     right: auto;
     left: 0;
 }
+
 /* VENDORE END */
 
 /* WISHLIST END */
@@ -826,6 +840,7 @@
     left: 5px;
     display: inline-table;
 }
+
 /* WISHLIST END */
 
 .wsus__cart_list .wsus__pro_icon a i {
@@ -862,6 +877,7 @@
 .wsus__mini_cart .wsus__cart_img {
     margin-right: 5px;
 }
+
 /* MINI CART END */
 
 /* HOME PAGE 2 START */
@@ -906,7 +922,7 @@
     margin-right: 25px;
 }
 
-.wsus__menu_droapdown > li {
+.wsus__menu_dropdown > li {
     margin-right: 0 !important;
 }
 
@@ -966,6 +982,7 @@
     right: auto;
     left: 15px;
 }
+
 /* HOME PAGE 2 END */
 
 /* DASHBOARD START */
@@ -1129,6 +1146,7 @@
     right: auto;
     left: 7px;
 }
+
 /* DASHBOARD END */
 
 .home_2 .wsus_menu_cat_item {
@@ -1255,8 +1273,8 @@
     .wsus__hot_deals_text {
         padding-right: 0;
     }
-    /* HOME PAGE END */
 
+    /* HOME PAGE END */
     .wsus__invoice_single.text-md-end {
         text-align: right !important;
     }
@@ -1338,8 +1356,8 @@
         margin-right: 0;
         margin-left: 10px;
     }
-    /* HOME PAGE END */
 
+    /* HOME PAGE END */
     .wsus__order_details_text {
         float: right;
     }

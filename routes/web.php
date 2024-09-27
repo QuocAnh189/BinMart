@@ -35,7 +35,7 @@ require __DIR__.'/auth.php';
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
 
 /** Product routes */
-Route::get('products', [FrontendProductController::class, 'index'])->name('products.index');
+Route::get('products', [FrontendProductController::class, 'index'])->name('products');
 Route::get('product-detail/{slug}', [FrontendProductController::class, 'show_product'])->name('product-detail');
 Route::get('change-product-list-view', [FrontendProductController::class, 'change_list_view'])->name('change-product-list-view');
 
@@ -44,7 +44,7 @@ Route::post('newsletter-request', [NewsletterController::class, 'newsLetterReque
 Route::get('newsletter-verify/{token}', [NewsletterController::class, 'newsLetterEmailVerify'])->name('newsletter-verify');
 
 /** Vendor page routes */
-Route::get('vendor', [HomeController::class, 'vendor'])->name('vendor.index');
+Route::get('vendor', [HomeController::class, 'vendor'])->name('vendor');
 Route::get('vendor-product/{id}', [HomeController::class, 'vendor_products'])->name('vendor.products');
 
 /** About page route */

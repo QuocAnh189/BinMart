@@ -1,6 +1,6 @@
 /* global Symbol */
 
-(function (exports) {
+(function(exports) {
     'use strict';
 
     /*!
@@ -19,7 +19,7 @@
      * @param output
      * @returns {*|{}}
      */
-    let extend = function (output) {
+    let extend = function(output) {
         let obj;
         let out = output || {};
 
@@ -104,7 +104,7 @@
     };
 
     /**
-     * simplyCountdown, create and display the coundtown.
+     * simplyCountdown, create and display the countdown.
      * @param elt
      * @param args (parameters)
      */
@@ -183,7 +183,7 @@
             let fullCountDown = createElements(parameters, countdown);
             let refresh;
 
-            refresh = function () {
+            refresh = function() {
                 let dayWord;
                 let hourWord;
                 let minuteWord;
@@ -284,14 +284,14 @@
 
 /* global jQuery, simplyCountdown */
 if (window.jQuery) {
-    (function ($, simplyCountdown) {
+    (function($, simplyCountdown) {
         'use strict';
 
         function simplyCountdownify(el, options) {
             simplyCountdown(el, options);
         }
 
-        $.fn.simplyCountdown = function (options) {
+        $.fn.simplyCountdown = function(options) {
             return simplyCountdownify(this.selector, options);
         };
     }(jQuery, simplyCountdown));

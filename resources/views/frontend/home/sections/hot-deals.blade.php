@@ -1,6 +1,5 @@
 <section id="wsus__hot_deals" class="wsus__hot_deals_2">
     <div class="container">
-
         <div class="wsus__hot_large_item">
             <div class="row">
                 <div class="col-xl-12">
@@ -14,13 +13,13 @@
                     </div>
                 </div>
             </div>
+
             <div class="row grid2">
                 @foreach ($typeBaseProducts as $key => $products)
                     @foreach ($products as $product)
                         <x-product-card :product="$product" :key="$key" />
                     @endforeach
                 @endforeach
-
             </div>
         </div>
 

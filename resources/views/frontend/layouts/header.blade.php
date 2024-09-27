@@ -6,16 +6,17 @@
                     <span class="wsus__mobile_menu_icon"><i class="fal fa-bars"></i></span>
                 </div>
             </div>
-            <div class="col-xl-2 col-7 col-md-8 col-lg-2">
+            <div class="col-xl-2 col-7 col-md-8 col-lg-2 d-flex align-items-center justify-content-center">
                 <div class="wsus_logo_area">
-                    <a class="wsus__header_logo" href="{{url('/')}}">
-                        <img src="{{asset($logoSetting->logo)}}" alt="logo" class="img-fluid w-100">
-                    </a>
+                    {{--                    <a class="wsus__header_logo" href="{{url('/')}}">--}}
+                    {{--                        <img src="{{asset($logoSetting->logo)}}" alt="logo" class="img-fluid w-100">--}}
+                    {{--                    </a>--}}
+                    <h3 class="text-white d-inline">{{ $settings->site_name }}</h3>
                 </div>
             </div>
             <div class="col-xl-5 col-md-6 col-lg-4 d-none d-lg-block">
                 <div class="wsus__search">
-                    <form action="{{route('products.index')}}">
+                    <form action="{{route('products')}}">
                         <input type="text" placeholder="Search..." name="search" value="{{request()->search}}">
                         <button type="submit"><i class="far fa-search"></i></button>
                     </form>

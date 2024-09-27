@@ -26,7 +26,7 @@
                 <div class="wsus__home_services_single home_service_single_2">
                     <i class="fal fa-credit-card"></i>
                     <h5>Secure Online Payment</h5>
-                    <p>We posess SSL / Secure Certificate</p>
+                    <p>We poses SSL / Secure Certificate</p>
                 </div>
             </div>
         </div>

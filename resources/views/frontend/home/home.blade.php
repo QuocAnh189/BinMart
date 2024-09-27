@@ -1,8 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    {{--    {{$settings->site_name}} || Binmart--}}
-    Binmart
+    {{$settings->site_name}}
 @endsection
 
 @section('content')

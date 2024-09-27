@@ -42,7 +42,6 @@
     /* .wsus__category_search {
     width: 30%;
   } */
-
     .wsus__call {
         font-size: 30px;
         padding-top: 6px;
@@ -130,7 +129,6 @@
     }
 
     /* PRODUCT DETAILS START */
-
     .wsus_pro_hot_deals h5 {
         font-size: 18px;
     }
@@ -1305,13 +1303,13 @@
         padding: 30px;
     }
 
-    .wsus__flash_coundown {
+    .wsus__flash_countdown {
         justify-content: center;
         padding: 20px 10px;
         flex-direction: column;
     }
 
-    .wsus__flash_coundown .end_text {
+    .wsus__flash_countdown .end_text {
         margin-right: 0;
         margin-bottom: 15px;
     }
@@ -2249,7 +2247,6 @@
     /*========================
     HOME PAGE 2 END
   =========================*/
-
     .wsus__order_details {
         margin-top: 25px;
     }
@@ -2393,7 +2390,7 @@
         margin-bottom: 15px;
     }
 
-    .wsus__flash_coundown {
+    .wsus__flash_countdown {
         justify-content: center;
         padding: 20px 10px;
         flex-direction: column;
@@ -2411,7 +2408,7 @@
         font-size: 25px !important;
     }
 
-    .wsus__flash_coundown .end_text {
+    .wsus__flash_countdown .end_text {
         margin-right: 0;
         margin-bottom: 15px;
     }
@@ -3697,7 +3694,6 @@
     /*========================
     HOME PAGE 2 END
   =========================*/
-
     /* extra css start here */
     #wsus__hot_deals {
         padding-top: 36px;
@@ -3860,7 +3856,7 @@
         margin-bottom: 15px;
     }
 
-    .wsus__flash_coundown {
+    .wsus__flash_countdown {
         justify-content: center;
         padding: 20px;
         flex-direction: column;
@@ -3870,7 +3866,7 @@
         font-size: 23px !important;
     }
 
-    .wsus__flash_coundown .end_text {
+    .wsus__flash_countdown .end_text {
         margin-right: 0;
         margin-bottom: 15px;
         font-size: 25px;
@@ -5379,7 +5375,6 @@
     /*========================
     HOME PAGE 2 END
   =========================*/
-
     /* extra css start here */
     #wsus__brand_sleder .nxt_arr {
         right: 7px;
