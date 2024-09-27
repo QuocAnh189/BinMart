@@ -36,7 +36,7 @@ Route::get('vendor', [HomeController::class, 'vendor'])->name('vendor');
 Route::get('vendor-product/{id}', [HomeController::class, 'vendor_products'])->name('vendor.products');
 
 /** Flash-sale routes */
-Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
+Route::get('flash-sale', [FlashSaleController::class, 'flash_sale'])->name('flash-sale');
 
 /** Product routes */
 Route::get('products', [FrontendProductController::class, 'index'])->name('products');
