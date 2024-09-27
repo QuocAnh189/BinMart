@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Advertisement;
 use App\Models\Blog;
 use App\Models\Brand;
+use App\Models\Category;
 use App\Models\FlashSale;
 use App\Models\FlashSaleItem;
 use App\Models\HomePageSetting;
 use App\Models\Product;
 use App\Models\Slider;
+use App\Models\Vendor;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
 {
@@ -86,9 +89,31 @@ class HomeController extends Controller
         return $typeBaseProducts;
     }
 
-    public function vendor() {}
+    public function vendor()
+    {
+        $vendors = Vendor::where('status', 1)->paginate(20);
 
-    public function vendor_products(string $id) {}
+        return view('frontend.pages.vendor', compact('vendors'));
+    }
 
-    public function show_product_modal(string $id) {}
+    public function vendor_products(string $id)
+    {
+        $products = Product::where(['status' => 1, 'is_approved' => 1, 'vendor_id' => $id])
+            ->orderBy('id', 'DESC')
+            ->paginate(12);
+        $categories = Category::where(['status' => 1])->get();
+        $brands = Brand::where(['status' => 1])->get();
+        $vendor = Vendor::findOrFail($id);
+
+        return view('frontend.pages.vendor-product', compact('products', 'categories', 'brands', 'vendor'));
+    }
+
+    public function show_product_modal(string $id)
+    {
+        $product = Product::findOrFail($id);
+
+        $content = view('frontend.layouts.modal', compact('product'))->render();
+
+        return Response::make($content, 200, ['Content-Type' => 'text/html']);
+    }
 }

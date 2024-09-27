@@ -31,6 +31,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+/** Vendor page routes */
+Route::get('vendor', [HomeController::class, 'vendor'])->name('vendor');
+Route::get('vendor-product/{id}', [HomeController::class, 'vendor_products'])->name('vendor.products');
+
 /** Flash-sale routes */
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
 
@@ -42,10 +46,6 @@ Route::get('change-product-list-view', [FrontendProductController::class, 'chang
 /** Newsletter routes */
 Route::post('newsletter-request', [NewsletterController::class, 'newsLetterRequest'])->name('newsletter-request');
 Route::get('newsletter-verify/{token}', [NewsletterController::class, 'newsLetterEmailVerify'])->name('newsletter-verify');
-
-/** Vendor page routes */
-Route::get('vendor', [HomeController::class, 'vendor'])->name('vendor');
-Route::get('vendor-product/{id}', [HomeController::class, 'vendor_products'])->name('vendor.products');
 
 /** About page route */
 Route::get('about', [PageController::class, 'about'])->name('about');
