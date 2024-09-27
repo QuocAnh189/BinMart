@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\Admin\SliderDataTable;
 use App\Http\Controllers\Controller;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+    use ImageUploadTrait;
+
     /**
      * Display a listing of the resource.
      */

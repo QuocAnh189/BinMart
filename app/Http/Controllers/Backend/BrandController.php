@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\Admin\BrandDataTable;
 use App\Http\Controllers\Controller;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
+    use ImageUploadTrait;
+
     public function index(BrandDataTable $dataTable) {}
 
     /**
