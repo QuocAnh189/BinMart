@@ -12,12 +12,11 @@ class SettingController extends Controller
 
     public function index() {}
 
-    public function generalSettingUpdate(Request $request) {}
+    public function general_setting_update(Request $request) {}
 
-    public function emailConfigSettingUpdate(Request $request) {}
+    public function email_config_setting_update(Request $request) {}
 
-    public function logoSettingUpdate(Request $request) {}
+    public function logo_setting_update(Request $request) {}
 
-    /** Pusher settings update */
-    public function pusherSettingUpdate(Request $request) {}
+    public function pusher_setting_update(Request $request) {}
 }

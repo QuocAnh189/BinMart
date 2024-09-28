@@ -12,11 +12,11 @@ class FlashSaleController extends Controller
 
     public function update(Request $request) {}
 
-    public function addProduct(Request $request) {}
+    public function add_product(Request $request) {}
 
-    public function changeShowAtHomeStatus(Request $request) {}
+    public function change_show_at_home_status(Request $request) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 
     public function destroy(string $id) {}
 }

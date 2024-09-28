@@ -21,7 +21,7 @@ class ChildCategoryController extends Controller
     /**
      * Get sub categories
      */
-    public function getSubCategories(Request $request) {}
+    public function get_sub_categories(Request $request) {}
 
     /**
      * Store a newly created resource in storage.
@@ -51,5 +51,5 @@ class ChildCategoryController extends Controller
      */
     public function destroy(string $id) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }

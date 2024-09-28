@@ -38,5 +38,5 @@ class FooterSocialController extends Controller
      */
     public function destroy(string $id) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }

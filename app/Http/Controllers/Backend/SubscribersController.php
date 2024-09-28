@@ -10,7 +10,7 @@ class SubscribersController extends Controller
 {
     public function index(NewsletterSubscriberDataTable $dataTable) {}
 
-    public function sendMail(Request $request) {}
+    public function send_mail(Request $request) {}
 
     public function destroy(string $id) {}
 }

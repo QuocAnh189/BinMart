@@ -9,8 +9,8 @@ class ProfileController extends Controller
 {
     public function index() {}
 
-    public function updateProfile(Request $request) {}
+    public function update_profile(Request $request) {}
 
     /** Update Password */
-    public function updatePassword(Request $request) {}
+    public function update_password(Request $request) {}
 }

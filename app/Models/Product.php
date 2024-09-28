@@ -122,4 +122,23 @@ class Product extends Model
     {
         return $this->hasMany(ProductReview::class);
     }
+
+    public function scopeRequest($request, $model)
+    {
+        return $this::withAvg('reviews', 'rating')->withCount('reviews')
+            ->with(['variants', 'category', 'productImageGalleries'])
+            ->where([
+                'category_id' => $model->id,
+                'status' => 1,
+                'is_approved' => 1,
+            ])
+            ->when($request->has('range'), function ($query) use ($request) {
+                $price = explode(';', $request->range);
+                $from = $price[0];
+                $to = $price[1];
+
+                return $query->where('price', '>=', $from)->where('price', '<=', $to);
+            })
+            ->paginate(12);
+    }
 }

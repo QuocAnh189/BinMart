@@ -10,5 +10,5 @@ class AdminReviewController extends Controller
 {
     public function index(AdminReviewDataTable $dataTable) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }

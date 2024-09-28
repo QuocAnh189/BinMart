@@ -10,5 +10,5 @@ class VendorListController extends Controller
 {
     public function index(VendorListDataTable $dataTable) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }

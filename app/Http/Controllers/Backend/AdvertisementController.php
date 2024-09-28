@@ -12,15 +12,15 @@ class AdvertisementController extends Controller
 
     public function index() {}
 
-    public function homepageBannerSessionOne(Request $request) {}
+    public function homepage_banner_section_one(Request $request) {}
 
-    public function homepageBannerSessionTwo(Request $request) {}
+    public function homepage_banner_section_two(Request $request) {}
 
-    public function homepageBannerSessionThree(Request $request) {}
+    public function homepage_banner_section_three(Request $request) {}
 
-    public function homepageBannerSessionFour(Request $request) {}
+    public function homepage_banner_section_four(Request $request) {}
 
-    public function productPageBanner(Request $request) {}
+    public function product_page_banner(Request $request) {}
 
-    public function cartPageBanner(Request $request) {}
+    public function cart_page_banner(Request $request) {}
 }

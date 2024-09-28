@@ -13,19 +13,19 @@ class OrderController extends Controller
      */
     public function index(OrderDataTable $dataTable) {}
 
-    public function pendingOrders() {}
+    public function pending_orders() {}
 
-    public function processedOrders() {}
+    public function processed_orders() {}
 
-    public function droppedOfOrders() {}
+    public function dropped_of_orders() {}
 
-    public function shippedOrders() {}
+    public function shipped_orders() {}
 
-    public function outForDeliveryOrders() {}
+    public function out_for_delivery_orders() {}
 
-    public function deliveredOrders() {}
+    public function delivered_orders() {}
 
-    public function canceledOrders() {}
+    public function canceled_orders() {}
 
     /**
      * Display the specified resource.
@@ -53,7 +53,7 @@ class OrderController extends Controller
      */
     public function destroy(string $id) {}
 
-    public function changeOrderStatus(Request $request) {}
+    public function change_order_status(Request $request) {}
 
-    public function changePaymentStatus(Request $request) {}
+    public function change_payment_status(Request $request) {}
 }

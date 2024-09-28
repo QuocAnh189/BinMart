@@ -10,7 +10,7 @@ class AdminListController extends Controller
 {
     public function index(AdminListDataTable $dataTable) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 
     public function destroy(string $id) {}
 }

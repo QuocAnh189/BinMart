@@ -10,5 +10,5 @@ class CustomerListController extends Controller
 {
     public function index(CustomerListDataTable $dataTable) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }

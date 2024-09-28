@@ -38,7 +38,7 @@ class FooterGridTwoController extends Controller
      */
     public function destroy(string $id) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 
-    public function changeTitle(Request $request) {}
+    public function change_title(Request $request) {}
 }

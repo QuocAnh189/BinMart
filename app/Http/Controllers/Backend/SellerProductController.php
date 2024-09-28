@@ -10,7 +10,7 @@ class SellerProductController extends Controller
 {
     public function index(SellerProductsDataTable $dataTable) {}
 
-    public function pendingProducts() {}
+    public function pending_products() {}
 
-    public function changeApproveStatus(Request $request) {}
+    public function change_approve_status(Request $request) {}
 }

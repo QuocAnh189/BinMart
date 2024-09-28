@@ -12,5 +12,5 @@ class VendorRequestController extends Controller
 
     public function show(string $id) {}
 
-    public function changeStatus(Request $request, string $id) {}
+    public function change_status(Request $request, string $id) {}
 }

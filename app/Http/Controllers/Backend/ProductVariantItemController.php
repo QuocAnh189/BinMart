@@ -20,5 +20,5 @@ class ProductVariantItemController extends Controller
 
     public function destroy(string $variantItemId) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 }
