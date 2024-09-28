@@ -58,7 +58,7 @@ Route::get('contact', [PageController::class, 'contact'])->name('contact');
 Route::post('contact', [PageController::class, 'handle_contact_form'])->name('handle-contact-form');
 
 /** Product track route */
-Route::get('product-tracking', [ProductTrackController::class, 'index'])->name('product-tracking.index');
+Route::get('product-tracking', [ProductTrackController::class, 'product_tracking'])->name('product-tracking');
 
 /** Blog routes */
 Route::get('blog', [BlogController::class, 'blog'])->name('blog');
