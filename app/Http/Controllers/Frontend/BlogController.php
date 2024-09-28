@@ -31,7 +31,18 @@ class BlogController extends Controller
         return view('frontend.pages.blog', compact('blogs'));
     }
 
-    public function blog_details(string $slug) {}
+    public function blog_detail(string $slug)
+    {
+        $blog = Blog::with('comments', 'user')->where('slug', $slug)->where('status', 1)->firstOrFail();
+        $moreBlogs = Blog::where('slug', '!=', $slug)->where('status', 1)->orderBy('id', 'DESC')->take(5)->get();
+        $recentBlogs = Blog::where('slug', '!=', $slug)->where('status', 1)
+            ->where('category_id', $blog->category_id)->orderBy('id', 'DESC')->take(12)->get();
+
+        $comments = $blog->comments()->paginate(20);
+        $categories = BlogCategory::where('status', 1)->get();
+
+        return view('frontend.pages.blog-detail', compact('blog', 'moreBlogs', 'recentBlogs', 'comments', 'categories'));
+    }
 
     public function comment_blog(Request $request) {}
 }
