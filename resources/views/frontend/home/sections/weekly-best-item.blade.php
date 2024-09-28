@@ -46,7 +46,7 @@
                     <div class="row weekly_best2">
                         @foreach ($products as $item)
                             <div class="col-xl-4 col-lg-4">
-                                <a class="wsus__hot_deals__single" href="{{ route('product-detail', $item->slug) }}">
+                                <a class="wsus__hot_deals__single" href="{{ route('product.detail', $item->slug) }}">
                                     <div class="wsus__hot_deals__single_img">
                                         <img src="{{ asset($item->thumb_image) }}" alt="bag" class="img-fluid w-100">
                                     </div>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserMessageController extends Controller
 {
-    public function index() {}
+    public function messages_list() {}
 
     public function send_message(Request $request) {}
 

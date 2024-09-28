@@ -89,7 +89,7 @@ class HomeController extends Controller
         return $typeBaseProducts;
     }
 
-    public function vendor()
+    public function vendor_list()
     {
         $vendors = Vendor::where('status', 1)->paginate(20);
 

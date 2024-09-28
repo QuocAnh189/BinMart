@@ -20,19 +20,19 @@
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
                         @foreach ($categories as $category)
                             <li><a class="{{ count($category->subCategories) > 0 ? 'wsus__drop_arrow' : '' }}"
-                                   href="{{ route('products', ['category' => $category->slug]) }}"><i
+                                   href="{{ route('product.list', ['category' => $category->slug]) }}"><i
                                         class="{{ $category->icon }}"></i> {{ $category->name }} </a>
                                 @if(count($category->subCategories) > 0)
                                     <ul class="wsus_menu_cat_dropdown">
                                         @foreach ($category->subCategories as $subCategory)
                                             <li>
-                                                <a href="{{ route('products', ['subcategory' => $subCategory->slug]) }}">{{ $subCategory->name }}
+                                                <a href="{{ route('product.list', ['subcategory' => $subCategory->slug]) }}">{{ $subCategory->name }}
                                                     <i class="{{  count($subCategory->childCategories) > 0 ? 'fas fa-angle-right' : ''  }}"></i></a>
                                                 @if(count($subCategory->childCategories) > 0)
                                                     <ul class="wsus__sub_category">
                                                         @foreach ($subCategory->childCategories as $childCategory)
                                                             <li>
-                                                                <a href="{{ route('products', ['childcategory' => $childCategory->slug]) }}">{{ $childCategory->name }}</a>
+                                                                <a href="{{ route('product.list', ['childcategory' => $childCategory->slug]) }}">{{ $childCategory->name }}</a>
                                                             </li>
                                                         @endforeach
                                                     </ul>
@@ -47,25 +47,26 @@
 
                     <ul class="wsus__menu_item">
                         <li><a class="{{ setActive(['home']) }}" href="{{ url('/') }}">home</a></li>
-                        <li><a class="{{ setActive(['vendor']) }}" href="{{  route('vendor')  }}">vendors</a>
+                        <li><a class="{{ setActive(['vendor.list']) }}" href="{{ route('vendor.list') }}">vendors</a>
                         </li>
-                        <li><a class="{{ setActive(['flash-sale']) }}" href="{{  route('flash-sale')  }}">flash Sale</a>
+                        <li>
+                            <a class="{{ setActive(['flash-sale']) }}" href="{{ route('flash-sale') }}">flash Sale</a>
                         </li>
-                        <li><a class="{{ setActive(['blog']) }}" href="{{  route('blog')  }}">blog</a></li>
+                        <li><a class="{{ setActive(['blog']) }}" href="{{  route('blog.list')  }}">blog</a></li>
                         <li><a class="{{ setActive(['about']) }}" href="{{  route('about')  }}">about</a></li>
                         <li><a class="{{ setActive(['contact']) }}" href="{{  route('contact')  }}">contact</a></li>
                     </ul>
 
                     <ul class="wsus__menu_item wsus__menu_item_right">
-                        <li><a href="{{  route('product-tracking')  }}">track order</a></li>
+                        <li><a href="{{  route('product.tracking')  }}">track order</a></li>
                         @if ( auth()->check() )
                             <div class="d-flex align-items-center gap-2 px-4">
                                 @if (auth()->user()->role === 'user')
-                                    <li><a href="{{  route('user.dashboard')  }}">My Account </a></li>
+                                    <li><a href="{{ route('user.dashboard') }}">My Account </a></li>
                                 @elseif (auth()->user()->role === 'vendor')
-                                    <li><a href="{{  route('vendor.dashboard')  }}">Vendor Dashboard </a></li>
+                                    <li><a href="{{ route('vendor.dashboard') }}">Vendor Dashboard </a></li>
                                 @elseif (auth()->user()->role === 'admin')
-                                    <li><a href="{{  route('admin.dashboard')  }}">Admin Dashboard </a></li>
+                                    <li><a href="{{ route('admin.dashboard') }}">Admin Dashboard </a></li>
                                 @endif
                                 <li class="">
                                     <form method="POST" action="{{ route('logout') }}">
@@ -75,7 +76,7 @@
                                 </li>
                             </div>
                         @else
-                            <li><a href="{{ route('login') }}">login</a></li>
+                            <li><a href="{{ route('auth') }}">login</a></li>
                         @endif
                     </ul>
                 </div>
@@ -88,7 +89,7 @@
     <span class="wsus__mobile_menu_close"><i class="fal fa-times"></i></span>
     <ul class="wsus__mobile_menu_header_icon d-inline-flex">
         <li>
-            <a href="{{ route('user.wishlist.index') }}">
+            <a href="{{ route('user.wishlist.list') }}">
                 <i class="fal fa-heart"></i>
                 <span id="wishlist_count">
                     @if (auth()->check())
@@ -109,11 +110,11 @@
                 <li><a href="{{ route('admin.dashboard') }}"><i class="fal fa-user"></i></a></li>
             @endif
         @else
-            <li><a href="{{  route('login')  }}"><i class="fal fa-user"></i></a></li>
+            <li><a href="{{ route('auth') }}"><i class="fal fa-user"></i></a></li>
         @endif
 
     </ul>
-    <form action="{{ route('products') }}">
+    <form action="{{ route('product.list') }}">
         <input type="text" placeholder="Search..." name="search" value="{{ request()->search }}">
         <button type="submit"><i class="far fa-search"></i></button>
     </form>
@@ -168,11 +169,11 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
                     <ul>
                         <li><a href="{{ route('home') }}">home</a></li>
-                        <li><a href="{{ route('vendor') }}">vendor</a></li>
-                        <li><a href="{{ route('blog') }}">blog</a></li>
+                        <li><a href="{{ route('vendor.list') }}">vendor</a></li>
+                        <li><a href="{{ route('blog.list') }}">blog</a></li>
                         <li><a href="{{ route('about') }}">about us</a></li>
                         <li><a href="{{ route('contact') }}">contact</a></li>
-                        <li><a href="{{ route('product-tracking') }}">track order</a></li>
+                        <li><a href="{{ route('product.tracking') }}">track order</a></li>
                         <li><a href="{{ route('flash-sale') }}">flash sale</a></li>
                     </ul>
                 </div>

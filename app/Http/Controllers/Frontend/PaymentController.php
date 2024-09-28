@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function index() {}
+    public function payment() {}
 
     public function payment_success() {}
 
@@ -23,12 +23,9 @@ class PaymentController extends Controller
 
     public function paypal_cancel() {}
 
-    /** Stripe Payment */
     public function pay_with_stripe(Request $request) {}
 
-    /** Razorpay payment */
     public function pay_with_razorpay(Request $request) {}
 
-    /** pay with cod */
     public function pay_with_code(Request $request) {}
 }

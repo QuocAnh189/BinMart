@@ -8,40 +8,32 @@ use Illuminate\Http\Request;
 class UserAddressController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of address
      */
-    public function index() {}
+    public function address_list() {}
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a address
      */
-    public function create() {}
+    public function view_create_address() {}
 
     /**
-     * Store a newly created resource in storage.
+     * Create address
      */
-    public function store(Request $request) {}
+    public function create_address(Request $request) {}
 
     /**
-     * Display the specified resource.
+     * Show the form for updating a address
      */
-    public function show(string $id)
-    {
-        //
-    }
+    public function view_update_address(string $id) {}
 
     /**
-     * Show the form for editing the specified resource.
+     * Update address
      */
-    public function edit(string $id) {}
+    public function update_address(Request $request, string $id) {}
 
     /**
-     * Update the specified resource in storage.
+     * Remove address
      */
-    public function update(Request $request, string $id) {}
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id) {}
+    public function delete_address(string $id) {}
 }

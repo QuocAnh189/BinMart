@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
-    public function newsLetterRequest(Request $request) {}
+    public function newsLetter_request(Request $request) {}
 
-    public function newsLetterEmailVerify($token) {}
+    public function newsLetter_email_verify($token) {}
 }

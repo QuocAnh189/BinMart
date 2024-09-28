@@ -47,7 +47,7 @@
                             <div class="tab-pane fade show active" id="pills-homes" role="tabpanel"
                                  aria-labelledby="pills-home-tab2">
                                 <div class="wsus__login">
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" action="{{ route('auth.login') }}">
                                         @csrf
                                         <div class="wsus__login_input">
                                             <i class="fas fa-user-tie"></i>
@@ -64,7 +64,7 @@
                                             <div class="form-check form-switch">
                                                 <input id="remember_me" name="remember" class="form-check-input"
                                                        type="checkbox"
-                                                       id="flexSwitchCheckDefault">
+                                                >
                                                 <label class="form-check-label" for="flexSwitchCheckDefault">
                                                     Remember me
                                                 </label>
@@ -81,7 +81,7 @@
                             <div class="tab-pane fade" id="pills-profiles" role="tabpanel"
                                  aria-labelledby="pills-profile-tab2">
                                 <div class="wsus__login">
-                                    <form method="POST" action="{{ route('register') }}">
+                                    <form method="POST" action="{{ route('auth.register') }}">
                                         @csrf
                                         <div class="wsus__login_input">
                                             <i class="fas fa-user-tie"></i>

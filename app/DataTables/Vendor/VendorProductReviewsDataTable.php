@@ -22,7 +22,7 @@ class VendorProductReviewsDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('product', function ($query) {
-                return "<a href='".route('product-detail', $query->product->slug)."' > ".$query->product->name.'</a>';
+                return "<a href='".route('product.detail', $query->product->slug)."' > ".$query->product->name.'</a>';
             })
             ->addColumn('user', function ($query) {
                 return $query->user->name;

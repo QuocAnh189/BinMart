@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class UserOrderController extends Controller
 {
-    public function index(UserOrderDataTable $dataTable) {}
+    public function order_list(UserOrderDataTable $dataTable) {}
 
-    public function show(string $id) {}
+    public function show_order(string $id) {}
 }

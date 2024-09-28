@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CheckOutController extends Controller
 {
-    public function index() {}
+    public function checkout() {}
 
     public function create_address(Request $request) {}
 

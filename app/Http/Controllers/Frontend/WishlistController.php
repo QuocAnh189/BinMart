@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class WishlistController extends Controller
 {
-    public function index() {}
+    public function wishlist() {}
 
     public function add_to_wishlist(Request $request) {}
 
-    public function destroy(string $id) {}
+    public function remove_product(string $id) {}
 }

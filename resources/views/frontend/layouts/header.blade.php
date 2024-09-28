@@ -16,7 +16,7 @@
             </div>
             <div class="col-xl-5 col-md-6 col-lg-4 d-none d-lg-block">
                 <div class="wsus__search">
-                    <form action="{{route('products')}}">
+                    <form action="{{ route('product.list') }}">
                         <input type="text" placeholder="Search..." name="search" value="{{request()->search}}">
                         <button type="submit"><i class="far fa-search"></i></button>
                     </form>
@@ -30,11 +30,11 @@
                         </div>
                         <div class="wsus__call_text">
                             <span class="text-white">{{ $settings->contact_email }}</span>
-                            <p>{{$settings->contact_phone}}</p>
+                            <p>{{ $settings->contact_phone }}</p>
                         </div>
                     </div>
                     <ul class="wsus__icon_area">
-                        <li><a href="{{route('user.wishlist.index')}}"><i class="fal fa-heart"></i><span
+                        <li><a href="{{route('user.wishlist.list')}}"><i class="fal fa-heart"></i><span
                                     id="wishlist_count">
                                 @if (auth()->check())
                                         {{\App\Models\Wishlist::where('user_id', auth()->user()->id)->count()}}
@@ -54,9 +54,11 @@
     </div>
 
     <div class="wsus__mini_cart">
-        <h4>shopping cart <span class="wsus_close_mini_cart">
+        <h4>
+            shopping cart
+            <span class="wsus_close_mini_cart">
                     <i class="far fa-times"></i>
-                </span>
+            </span>
         </h4>
         <ul class="mini_cart_wrapper">
             {{--            @foreach (Cart::content() as $sidebarProduct)--}}
@@ -69,7 +71,7 @@
             {{--                    </div>--}}
             {{--                    <div class="wsus__cart_text">--}}
             {{--                        <a class="wsus__cart_title"--}}
-            {{--                           href="{{route('product-detail', $sidebarProduct->options->slug)}}">{{$sidebarProduct->name}}</a>--}}
+            {{--                           href="{{route('product.detail', $sidebarProduct->options->slug)}}">{{$sidebarProduct->name}}</a>--}}
             {{--                        <p>--}}
             {{--                            {{$settings->currency_icon}}{{$sidebarProduct->price}}--}}
             {{--                        </p>--}}

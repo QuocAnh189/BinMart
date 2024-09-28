@@ -113,7 +113,7 @@
                 let data = $(this).serialize();
                 $.ajax({
                     method: 'POST',
-                    url: "{{ route('handle-contact-form') }}",
+                    url: "{{ route('contact.handle') }}",
                     data: data,
                     beforeSend: function() {
                         $('#form-submit').text('sending..');

@@ -98,7 +98,7 @@
                                                     <span class="wsus__minus">-{{ calculateDiscountPercent($product->price, $product->offer_price) }}%</span>
                                                 @endif
                                                 <a class="wsus__pro_link"
-                                                   href="{{ route('product-detail', $product->slug) }}">
+                                                   href="{{ route('product.detail', $product->slug) }}">
                                                     <img src="{{ asset($product->thumb_image) }}" alt="product"
                                                          class="img-fluid w-100 img_1" />
                                                     <img src="
@@ -137,7 +137,7 @@
                                                         <span>({{ count($product->reviews) }} review)</span>
                                                     </p>
                                                     <a class="wsus__pro_name"
-                                                       href="{{ route('product-detail', $product->slug) }}">{{ limitText($product->name, 53) }}</a>
+                                                       href="{{ route('product.detail', $product->slug) }}">{{ limitText($product->name, 53) }}</a>
                                                     @if(checkDiscount($product))
                                                         <p class="wsus__price">{{ $settings->currency_icon }}{{ $product->offer_price }}
                                                             <del>{{ $settings->currency_icon }}{{ $product->price }}</del>
@@ -185,7 +185,7 @@
                                                     <span class="wsus__minus">-{{ calculateDiscountPercent($product->price, $product->offer_price) }}%</span>
                                                 @endif
                                                 <a class="wsus__pro_link"
-                                                   href="{{ route('product-detail', $product->slug) }}">
+                                                   href="{{ route('product.detail', $product->slug) }}">
                                                     <img src="{{ asset($product->thumb_image) }}" alt="product"
                                                          class="img-fluid w-100 img_1" />
                                                     <img src="
@@ -216,7 +216,7 @@
                                                         <span>({{ count($product->reviews) }} review)</span>
                                                     </p>
                                                     <a class="wsus__pro_name"
-                                                       href="{{ route('product-detail', $product->slug) }}">{{ $product->name }}</a>
+                                                       href="{{ route('product.detail', $product->slug) }}">{{ $product->name }}</a>
 
                                                     @if(checkDiscount($product))
                                                         <p class="wsus__price">{{ $settings->currency_icon }}{{ $product->offer_price }}

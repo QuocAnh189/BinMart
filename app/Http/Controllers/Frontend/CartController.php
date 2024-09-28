@@ -37,8 +37,8 @@ class CartController extends Controller
     public function remove_sidebar_product(Request $request) {}
 
     /** Apply coupon */
-    public function applyCoupon(Request $request) {}
+    public function coupon_apply(Request $request) {}
 
     /** Calculate coupon discount */
-    public function couponCalculation() {}
+    public function coupon_calculation() {}
 }

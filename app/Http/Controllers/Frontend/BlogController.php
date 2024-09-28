@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function blog(Request $request)
+    public function blog_list(Request $request)
     {
         if ($request->has('search')) {
             $blogs = Blog::with('category')->where('title', 'like', '%'.$request->search.'%')
@@ -33,5 +33,5 @@ class BlogController extends Controller
 
     public function blog_details(string $slug) {}
 
-    public function comment(Request $request) {}
+    public function comment_blog(Request $request) {}
 }

@@ -10,7 +10,7 @@ class UserVendorRequestController extends Controller
 {
     use ImageUploadTrait;
 
-    public function index() {}
+    public function vendor_request() {}
 
-    public function create(Request $request) {}
+    public function create_vendor_request(Request $request) {}
 }

@@ -7463,16 +7463,16 @@ FORGET PASSWORD START
     border: 1px solid #eee;
     padding: 30px;
     border-radius: 5px;
-    box-shadow: rgb(50 50 93 / 15%) 0px 0px 5px 0px;
+    box-shadow: rgb(50 50 93 / 15%) 0 0 5px 0;
     background: #fff;
 }
 
-.wsus__forget_area .qiestion_icon {
+.wsus__forget_area .question_icon {
     display: block;
     text-align: center;
 }
 
-.wsus__forget_area .qiestion_icon i {
+.wsus__forget_area .question_icon i {
     font-size: 40px;
     color: #08C;
     margin-bottom: 15px;
