@@ -13,7 +13,7 @@ use Illuminate\View\View;
 class AuthenticatedSessionController extends Controller
 {
     /**
-     * Display the login view.
+     * Handle show login form
      */
     public function create(): View
     {
@@ -21,7 +21,7 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Handle user login
      */
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -35,22 +35,16 @@ class AuthenticatedSessionController extends Controller
         if ($request->user()->status === 'inactive') {
             Auth::guard('web')->logout();
             $request->session()->regenerateToken();
-            toastr('account has been banned from website please connect with support!', 'error', ['Account Banned!']);
+            flash()->warning('account has been banned from website please connect with support!');
 
             return redirect('/');
         }
-
-        //        if ($request->user()->role === 'admin') {
-        //            return redirect()->intended('/admin/dashboard');
-        //        } elseif ($request->user()->role === 'vendor') {
-        //            return redirect()->intended('/vendor/dashboard');
-        //        }
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
-     * Destroy an authenticated session.
+     * Handle user logout
      */
     public function destroy(Request $request): RedirectResponse
     {
