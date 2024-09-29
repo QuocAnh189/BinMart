@@ -11,7 +11,7 @@ class ReviewController extends Controller
 {
     use ImageUploadTrait;
 
-    public function reviews(UserProductReviewsDataTable $dataTable) {}
+    public function review_list(UserProductReviewsDataTable $dataTable) {}
 
     public function create_review(Request $request) {}
 }

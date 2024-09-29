@@ -1,15 +1,10 @@
-@extends('frontend.layouts.master')
+@extends('frontend.dashboard.layouts.master')
 
 @section('title')
-    {{--    {{$settings->site_name}} || Dashboard--}}
-    Dashboard
+    {{ $settings->site_name }} || BinMart
 @endsection
 
 @section('content')
-    <section id="wsus__dashboard">
-        <div class="container-fluid">
-            @include('frontend.dashboard.layouts.sidebar')
-        </div>
-    </section>
+
 @endsection
 
