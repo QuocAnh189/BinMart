@@ -16,7 +16,7 @@ class AdminListDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                if ($query->id != 1) {
+                if ($query->id !== 1) {
                     $deleteBtn = "<a href='".route('admin.admin-list.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
 
                     return $deleteBtn;
