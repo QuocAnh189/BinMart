@@ -27,9 +27,9 @@
     <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/css/components.css')}}">
 
-    {{-- @if($settings->layout === 'RTL')
+    @if($settings->layout === 'RTL')
         <link rel="stylesheet" href="{{asset('backend/assets/css/rtl.css')}}">
-    @endif --}}
+    @endif
 
     <script>
         const USER = {
@@ -37,10 +37,10 @@
             , name: "{{ auth()->user()->nmae }}"
             , image: "{{ asset(auth()->user()->image) }}"
         };
-        {{--const PUSHER = {--}}
-        {{--    key: "{{ $pusherSetting->pusher_key }}"--}}
-        {{--    , cluster: "{{ $pusherSetting->pusher_cluster }}"--}}
-        {{--}--}}
+        const PUSHER = {
+            key: "{{ $pusherSetting->pusher_key }}"
+            , cluster: "{{ $pusherSetting->pusher_cluster }}"
+        };
 
     </script>
 
@@ -113,9 +113,7 @@
 
         $('body').on('click', '.delete-item', function(event) {
             event.preventDefault();
-
             let deleteUrl = $(this).attr('href');
-
             Swal.fire({
                 title: 'Are you sure?'
                 , text: 'You won\'t be able to revert this!'
@@ -126,34 +124,32 @@
                 , confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-
                     $.ajax({
-                        type: 'DELETE'
-                        , url: deleteUrl
-                        , success: function(data) {
-                            if (data.status == 'success') {
+                        type: 'DELETE',
+                        url: deleteUrl,
+                        success: function(data) {
+                            if (data.status === 'success') {
                                 Swal.fire(
                                     'Deleted!'
                                     , data.message
                                     , 'success'
                                 );
                                 window.location.reload();
-                            } else if (data.status == 'error') {
+                            } else if (data.status === 'error') {
                                 Swal.fire(
                                     'Cant Delete'
                                     , data.message
                                     , 'error'
                                 );
                             }
-                        }
-                        , error: function(xhr, status, error) {
+                        },
+                        error: function(xhr, status, error) {
                             console.log(error);
                         }
                     });
                 }
             });
         });
-
     });
 </script>
 @stack('scripts')
