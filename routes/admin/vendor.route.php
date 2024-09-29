@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\VendorListController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('vendor-profile', AdminVendorProfileController::class);
-Route::get('vendor-list', [VendorListController::class, 'index'])->name('vendor-list.index');
+Route::get('vendor-list', [VendorListController::class, 'vendor_list'])->name('vendor-list.index');
 Route::put('vendor-list/status-change', [VendorListController::class, 'change_status'])->name('vendor-list.status-change');
 
 Route::get('vendor-condition', [VendorConditionController::class, 'index'])->name('vendor-condition.index');
