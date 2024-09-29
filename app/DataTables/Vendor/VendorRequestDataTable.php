@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables;
+namespace App\DataTables\Vendor;
 
 use App\Models\Vendor;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
