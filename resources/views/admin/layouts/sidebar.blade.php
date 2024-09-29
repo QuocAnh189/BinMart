@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('/') }}">{{ $settings->site_name }}</a>
+            <a href="/">{{ $settings->site_name }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="">||</a>
@@ -291,7 +291,7 @@
 
                 </ul>
             </li>
-            
+
             <li
                 class="dropdown {{ setActive([
                     'admin.vendor-requests.index',
