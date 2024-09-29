@@ -13,15 +13,13 @@ use Yajra\DataTables\Services\DataTable;
 class CustomerListDataTable extends DataTable
 {
     /**
-     * Build the DataTable class.
-     *
-     * @param  QueryBuilder  $query  Results from query() method.
+     * Build the DataTable for customer-list.
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('status', function ($query) {
-                if ($query->status == 'active') {
+                if ($query->status === 'active') {
                     $button = '<label class="custom-switch mt-2">
                         <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>
