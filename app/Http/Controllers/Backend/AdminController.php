@@ -43,7 +43,7 @@ class AdminController extends Controller
         $totalVendors = User::where('role', 'vendor')->count();
         $totalUsers = User::where('role', 'user')->count();
 
-        return view('admin  .dashboard', compact(
+        return view('admin.dashboard', compact(
             'todayOrder',
             'todayPendingOrder',
             'totalOrders',

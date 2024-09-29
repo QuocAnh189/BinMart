@@ -7,7 +7,7 @@
             <a href="">||</a>
         </div>
         <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <li class="menu-header">Admin Dashboard</li>
             <li class="dropdown active">
                 <a href="{{ route('admin.dashboard') }}" class="nav-link">
                     <i class="fas fa-fire"></i>

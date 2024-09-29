@@ -33,9 +33,9 @@
 
     <script>
         const USER = {
-            id: "{{ auth()->user()->id }}"
-            , name: "{{ auth()->user()->nmae }}"
-            , image: "{{ asset(auth()->user()->image) }}"
+            id: "{{ auth()->user()->id }}",
+            name: "{{ auth()->user()->name }}",
+            image: "{{ asset(auth()->user()->image) }}"
         };
         const PUSHER = {
             key: "{{ $pusherSetting->pusher_key }}"
