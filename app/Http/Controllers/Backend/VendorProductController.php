@@ -41,12 +41,12 @@ class VendorProductController extends Controller
      */
     public function destroy(string $id) {}
 
-    public function changeStatus(Request $request) {}
+    public function change_status(Request $request) {}
 
     /**
      * Get all product sub categories
      */
-    public function getSubCategories(Request $request) {}
+    public function get_sub_categories(Request $request) {}
 
-    public function getChildCategories(Request $request) {}
+    public function get_child_categories(Request $request) {}
 }

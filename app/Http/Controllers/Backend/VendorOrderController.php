@@ -12,5 +12,5 @@ class VendorOrderController extends Controller
 
     public function show(string $id) {}
 
-    public function orderStatus(Request $request, string $id) {}
+    public function order_status(Request $request, string $id) {}
 }

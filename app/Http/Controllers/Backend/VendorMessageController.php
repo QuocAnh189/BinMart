@@ -9,7 +9,7 @@ class VendorMessageController extends Controller
 {
     public function index() {}
 
-    public function getMessages(Request $request) {}
+    public function get_messages(Request $request) {}
 
-    public function sendMessage(Request $request) {}
+    public function send_message(Request $request) {}
 }
