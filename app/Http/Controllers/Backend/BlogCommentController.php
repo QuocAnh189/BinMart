@@ -4,10 +4,20 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\Admin\BlogCommentDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\BlogComment;
 
 class BlogCommentController extends Controller
 {
-    public function index(BlogCommentDataTable $dataTable) {}
+    public function index(BlogCommentDataTable $dataTable)
+    {
+        return $dataTable->render('admin.blog.blog-comment.index');
+    }
 
-    public function destroy(string $id) {}
+    public function destroy(string $id)
+    {
+        $comment = BlogComment::findOrFail($id);
+        $comment->delete();
+
+        return response(['status' => 'success', 'message' => 'message']);
+    }
 }
