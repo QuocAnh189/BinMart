@@ -9,7 +9,7 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Admin Dashboard</li>
             <li class="dropdown active">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <i class="fas fa-fire"></i>
                     <span>Dashboard</span>
                 </a>
@@ -19,7 +19,7 @@
 
             <li
                 class="dropdown {{ setActive(['admin.category.*', 'admin.sub-category.*', 'admin.child-category.*']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-list"></i>
                     <span>Manage Categories</span>
                 </a>
@@ -46,7 +46,7 @@
                     'admin.seller-products.*',
                     'admin.seller-pending-products.*',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-box"></i>
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#"><i class="fas fa-box"></i>
                     <span>Manage Products</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.brand.*']) }}">
@@ -87,7 +87,7 @@
                     'admin.delivered-orders',
                     'admin.canceled-orders',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-cart-plus"></i>
                     <span>Orders</span>
                 </a>
@@ -146,7 +146,7 @@
                     'admin.shipping-rule.*',
                     'admin.payment-settings.*',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#"><i class="fas fa-columns"></i>
                     <span>Ecommerce</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.vendor-profile.*']) }}">
@@ -168,7 +168,7 @@
             </li>
 
             <li class="dropdown {{ setActive(['admin.withdraw-method.*', 'admin.withdraw.index']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-wallet"></i>
                     <span>Withdraw Payments</span>
                 </a>
@@ -191,10 +191,11 @@
                 class="dropdown {{ setActive([
                     'admin.slider.*',
                     'admin.vendor-condition.index',
+                    'admin.home-page-setting',
                     'admin.about.index',
                     'admin.terms-and-conditions.index',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-cog"></i>
                     <span>Manage Website</span>
                 </a>
@@ -203,7 +204,7 @@
                         <a class="nav-link" href="{{ route('admin.slider.index') }}">Slider</a>
                     </li>
 
-                    <li class="{{ setActive(['admin.slider.*']) }}">
+                    <li class="{{ setActive(['admin.home-page-setting.*']) }}">
                         <a class="nav-link" href="{{ route('admin.home-page-setting') }}">Home Page Setting</a>
                     </li>
                     <li class="{{ setActive(['admin.vendor-condition.index']) }}">
@@ -220,7 +221,7 @@
 
             <li>
                 <a class="nav-link {{ setActive(['admin.advertisement.*']) }}"
-                   href="{{ route('admin.advertisement.index') }}">
+                    href="{{ route('admin.advertisement.index') }}">
                     <i class="fas fa-ad"></i>
                     <span>Advertisement</span>
                 </a>
@@ -228,7 +229,7 @@
 
             <li
                 class="dropdown {{ setActive(['admin.blog-category.*', 'admin.blog.*', 'admin.blog-comments.index']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fab fa-blogger-b"></i>
                     <span>Manage Blog</span>
                 </a>
@@ -247,7 +248,7 @@
 
             <li>
                 <a class="nav-link {{ setActive(['admin.messages.index']) }}"
-                   href="{{ route('admin.messages.index') }}">
+                    href="{{ route('admin.messages.index') }}">
                     <i class="fas fa-user"></i>
                     <span>Messages</span>
                 </a>
@@ -262,7 +263,7 @@
                     'admin.footer-grid-two.*',
                     'admin.footer-grid-three.*',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-th-large"></i>
                     <span>Footer</span>
                 </a>
@@ -300,7 +301,7 @@
                     'admin.manage-user.index',
                     'admin-list.index',
                 ]) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                <a class="nav-link has-dropdown" data-toggle="dropdown" href="#">
                     <i class="fas fa-users"></i>
                     <span>Users</span>
                 </a>
@@ -329,7 +330,7 @@
 
             <li>
                 <a class="nav-link {{ setActive(['admin.subscribers.*']) }}"
-                   href="{{ route('admin.subscribers.index') }}">
+                    href="{{ route('admin.subscribers.index') }}">
                     <i class="fas fa-user"></i>
                     <span>Subscribers</span>
                 </a>
