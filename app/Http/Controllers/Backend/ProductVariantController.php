@@ -4,17 +4,24 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\Admin\ProductVariantDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\ProductVariant;
+use App\Models\ProductVariantItem;
 use Illuminate\Http\Request;
 
 class ProductVariantController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the product variant item.
      */
-    public function index(Request $request, ProductVariantDataTable $dataTable) {}
+    public function index(Request $request, ProductVariantDataTable $dataTable)
+    {
+        $product = Product::findOrFail($request->product);
+        return $dataTable->render('admin.product.product-variant.index', compact('product'));
+    }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new product variant item.
      */
     public function create()
     {
@@ -22,32 +29,77 @@ class ProductVariantController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created product variant item in storage.
      */
-    public function store(Request $request) {}
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'product' => ['integer', 'required'],
+            'name' => ['required', 'max:200'],
+            'status' => ['required']
+        ]);
+
+        $variant = new ProductVariant();
+        $variant->product_id = $request->product;
+        $variant->name = $request->name;
+        $variant->status = $request->status;
+        $variant->save();
+
+        toastr('Created Successfully!', 'success');
+
+        return redirect()->route('admin.products-variant.index', ['product' => $request->product]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified product variant item.
      */
-    public function edit(string $id) {}
+    public function edit(string $id)
+    {
+        $variant = ProductVariant::findOrFail($id);
+        return view('admin.product.product-variant.edit', compact('variant'));
+    }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified product variant item in storage.
      */
-    public function update(Request $request, string $id) {}
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'name' => ['required', 'max:200'],
+            'status' => ['required']
+        ]);
+
+        $variant = ProductVariant::findOrFail($id);
+        $variant->name = $request->name;
+        $variant->status = $request->status;
+        $variant->save();
+
+        toastr('Updated Successfully!', 'success');
+
+        return redirect()->route('admin.products-variant.index', ['product' => $variant->product_id]);
+    }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified product variant item from storage.
      */
-    public function destroy(string $id) {}
+    public function destroy(string $id)
+    {
+        $variant = ProductVariant::findOrFail($id);
+        $variantItemCheck = ProductVariantItem::where('product_variant_id', $variant->id)->count();
+        if ($variantItemCheck > 0) {
+            return response(['status' => 'error', 'message' => 'This variant contain variant items in it delete the variant items first for delete this variant!']);
+        }
+        $variant->delete();
 
-    public function change_status(Request $request) {}
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+    }
+
+    public function change_status(Request $request)
+    {
+        $variant = ProductVariant::findOrFail($request->id);
+        $variant->status = $request->status == 'true' ? 1 : 0;
+        $variant->save();
+
+        return response(['message' => 'Status has been updated!']);
+    }
 }
