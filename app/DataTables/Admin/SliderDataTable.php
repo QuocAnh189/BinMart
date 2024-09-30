@@ -21,13 +21,13 @@ class SliderDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $editBtn = "<a href='".route('admin.slider.edit', $query->id)."' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-                $deleteBtn = "<a href='".route('admin.slider.destroy', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
+                $editBtn = "<a href='" . route('admin.slider.edit', $query->id) . "' class='btn btn-primary'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('admin.slider.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
 
-                return $editBtn.$deleteBtn;
+                return $editBtn . $deleteBtn;
             })
             ->addColumn('banner', function ($query) {
-                return $img = "<img width='100px' alt='' src='".asset($query->banner)."' ></img>";
+                return $img = "<img width='100px' alt='' src='" . asset($query->banner) . "' ></img>";
             })
             ->addColumn('status', function ($query) {
                 $active = '<i class="badge badge-success">Active</i>';
@@ -77,7 +77,7 @@ class SliderDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('id')->width(100),
+            Column::make('id')->width(300),
             Column::make('banner')->width(200),
             Column::make('title'),
             Column::make('serial'),
@@ -95,6 +95,6 @@ class SliderDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Slider_'.date('YmdHis');
+        return 'Slider_' . date('YmdHis');
     }
 }
