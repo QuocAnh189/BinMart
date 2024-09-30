@@ -37,7 +37,7 @@ class AccountCreatedMail extends Mailable
         $generalSetting = GeneralSetting::first();
 
         return new Envelope(
-            subject: 'Welcome to '.$generalSetting->site_name,
+            subject: 'Welcome to ' . $generalSetting->site_name,
         );
     }
 

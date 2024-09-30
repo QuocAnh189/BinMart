@@ -6,6 +6,5 @@
         <div class="section-header">
             <h1>About</h1>
         </div>
-
     </section>
 @endsection
