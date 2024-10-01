@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class TransactionController extends Controller
 {
-    public function index(TransactionDataTable $dataTable) {}
+    public function index(TransactionDataTable $dataTable)
+    {
+        return $dataTable->render('admin.transaction.index');
+    }
 }
