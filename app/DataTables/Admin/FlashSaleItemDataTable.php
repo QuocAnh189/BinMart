@@ -21,22 +21,22 @@ class FlashSaleItemDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-                $deleteBtn = "<a href='".route('admin.flash-sale.destory', $query->id)."' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
+                $deleteBtn = "<a href='" . route('admin.flash-sale.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='far fa-trash-alt'></i></a>";
 
                 return $deleteBtn;
             })
             ->addColumn('product_name', function ($query) {
-                return "<a href='".route('admin.products.edit', $query->product->id)."'>".$query->product->name.'</a>';
+                return "<a href='" . route('admin.products.edit', $query->product->id) . "'>" . $query->product->name . '</a>';
             })
             ->addColumn('status', function ($query) {
                 if ($query->status == 1) {
                     $button = '<label class="custom-switch mt-2">
-                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status" >
+                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="' . $query->id . '" class="custom-switch-input change-status" >
                         <span class="custom-switch-indicator"></span>
                     </label>';
                 } else {
                     $button = '<label class="custom-switch mt-2">
-                        <input type="checkbox" name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-status">
+                        <input type="checkbox" name="custom-switch-checkbox" data-id="' . $query->id . '" class="custom-switch-input change-status">
                         <span class="custom-switch-indicator"></span>
                     </label>';
                 }
@@ -46,12 +46,12 @@ class FlashSaleItemDataTable extends DataTable
             ->addColumn('show_at_home', function ($query) {
                 if ($query->show_at_home == 1) {
                     $button = '<label class="custom-switch mt-2">
-                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-at-home-status" >
+                        <input type="checkbox" checked name="custom-switch-checkbox" data-id="' . $query->id . '" class="custom-switch-input change-at-home-status" >
                         <span class="custom-switch-indicator"></span>
                     </label>';
                 } else {
                     $button = '<label class="custom-switch mt-2">
-                        <input type="checkbox" name="custom-switch-checkbox" data-id="'.$query->id.'" class="custom-switch-input change-at-home-status">
+                        <input type="checkbox" name="custom-switch-checkbox" data-id="' . $query->id . '" class="custom-switch-input change-at-home-status">
                         <span class="custom-switch-indicator"></span>
                     </label>';
                 }
@@ -114,6 +114,6 @@ class FlashSaleItemDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'FlashSaleItem_'.date('YmdHis');
+        return 'FlashSaleItem_' . date('YmdHis');
     }
 }
