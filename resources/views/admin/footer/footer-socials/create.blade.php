@@ -28,7 +28,7 @@
                                     <input class="form-control" name="name" type="text" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label>url</label>
+                                    <label>Url</label>
                                     <input class="form-control" name="url" type="text" value="">
                                 </div>
                                 <div class="form-group">

@@ -18,6 +18,8 @@
                             <form action="{{ route('admin.footer-grid-three.change-title') }}" method="POST">
                                 @csrf
                                 @method('PUT')
+                                <input class="form-control d-none" name="id" type="text"
+                                    value="{{ @$footerTitle->id }}">
                                 <div class="col-4">
                                     <div class="form-group d-flex">
                                         <input class="form-control" name="title" type="text"

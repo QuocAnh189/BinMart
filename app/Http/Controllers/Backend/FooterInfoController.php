@@ -27,6 +27,7 @@ class FooterInfoController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
+            'id' => ['required', 'uuid'],
             'logo' => ['nullable', 'image', 'max:3000'],
             'phone' => ['max:100'],
             'email' => ['max:100'],
@@ -35,13 +36,16 @@ class FooterInfoController extends Controller
         ]);
 
         $footerInfo = FooterInfo::find($id);
-        /** Handle file upload */
-        $imagePath = $this->updateImage($request, 'logo', 'uploads', $footerInfo?->logo);
+
+        $imagePath = null;
+        if ($request->hasFile('logo')) {
+            $imagePath = $this->updateImage($request, 'logo', 'uploads/logo', $footerInfo?->logo);
+        }
 
         FooterInfo::updateOrCreate(
-            ['id' => $id],
+            ['id' => $request->id],
             [
-                'logo' => empty(!$imagePath) ? $imagePath : $footerInfo->banner,
+                'logo' => $imagePath ? $imagePath : $footerInfo?->banner,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'address' => $request->address,

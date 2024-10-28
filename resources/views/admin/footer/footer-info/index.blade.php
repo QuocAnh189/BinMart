@@ -18,6 +18,8 @@
                                 method="POST">
                                 @csrf
                                 @method('PUT')
+                                <input class="form-control d-none" name="id" type="text"
+                                    value="{{ @$footerInfo->id }}">
                                 <div class="form-group">
                                     <img alt="" src="{{ asset(@$footerInfo->logo) }}" width="150px">
                                     <br>

@@ -30,7 +30,7 @@
                                     <input class="form-control" name="name" type="text" value="{{ $footer->name }}">
                                 </div>
                                 <div class="form-group">
-                                    <label>url</label>
+                                    <label>Url</label>
                                     <input class="form-control" name="url" type="text" value="{{ $footer->url }}">
                                 </div>
                                 <div class="form-group">

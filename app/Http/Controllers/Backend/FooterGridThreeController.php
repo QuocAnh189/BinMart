@@ -110,11 +110,12 @@ class FooterGridThreeController extends Controller
     public function change_title(Request $request)
     {
         $request->validate([
+            'id' => ['required', 'uuid'],
             'title' => ['required', 'max:200']
         ]);
 
         FooterTitle::updateOrCreate(
-            ['id' => 1],
+            ['id' => $request->id],
             ['footer_grid_three_title' => $request->title]
         );
 
