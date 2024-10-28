@@ -47,7 +47,8 @@ class HomeController extends Controller
         $homepage_section_banner_four = json_decode($homepage_section_banner_four?->value);
         $recentBlogs = Blog::with(['category', 'user'])->where('status', 1)->orderBy('id', 'DESC')->take(8)->get();
 
-        return view('frontend.home.home',
+        return view(
+            'frontend.home.home',
             data: compact(
                 'sliders',
                 'flashSaleDate',
@@ -63,7 +64,8 @@ class HomeController extends Controller
                 'homepage_section_banner_three',
                 'homepage_section_banner_four',
                 'recentBlogs'
-            ));
+            )
+        );
     }
 
     public function getTypeBaseProduct()
